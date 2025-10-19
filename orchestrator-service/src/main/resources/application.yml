@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: orchestrator-service
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/growthengine
+    username: admin
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123

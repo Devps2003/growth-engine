@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: researcher-agent
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+
+# Custom property for queue name
+researcher:
+  queue:
+    name: research-queue
