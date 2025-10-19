@@ -82,3 +82,4 @@ public class TaskDTO {
         this.result = result;
     }
 }
+
