@@ -11,10 +11,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     
-    <artifactId>researcher-agent</artifactId>
+    <artifactId>writer-agent</artifactId>
     <packaging>jar</packaging>
-    <name>Researcher Agent</name>
-    <description>Agent that performs research tasks</description>
+    <name>Writer Agent</name>
+    <description>Agent that writes content based on research</description>
     
     <dependencies>
         <!-- Our common module -->
@@ -36,12 +36,6 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         
-        <!-- Testing -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!-- Spring Data JPA (Database) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,6 +48,13 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     
     <build>
@@ -65,3 +66,4 @@
         </plugins>
     </build>
 </project>
+

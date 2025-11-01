@@ -1,6 +1,6 @@
 spring:
   application:
-    name: researcher-agent
+    name: writer-agent
   
   datasource:
     url: jdbc:postgresql://localhost:5432/growthengine
@@ -19,6 +19,7 @@ spring:
     username: admin
     password: admin123
 
-researcher:
+writer:
   queue:
-    name: research-queue
+    name: writer-queue
+
