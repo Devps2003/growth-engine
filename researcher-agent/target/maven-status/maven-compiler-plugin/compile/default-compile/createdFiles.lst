@@ -1,0 +1,6 @@
+com/growthengine/agent/researcher/listener/TaskListener.class
+com/growthengine/agent/researcher/config/RabbitMQConfig.class
+com/growthengine/agent/researcher/entity/Task.class
+com/growthengine/agent/researcher/repository/TaskRepository.class
+com/growthengine/agent/researcher/service/ResearchService.class
+com/growthengine/agent/researcher/ResearcherAgentApplication.class

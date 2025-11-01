@@ -1,0 +1,6 @@
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/ResearcherAgentApplication.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/config/RabbitMQConfig.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/entity/Task.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/listener/TaskListener.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/repository/TaskRepository.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/service/ResearchService.java

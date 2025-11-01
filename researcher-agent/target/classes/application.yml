@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: researcher-agent
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/growthengine
+    username: admin
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: none  # Don't create tables (orchestrator does that)
+    show-sql: true
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+
+researcher:
+  queue:
+    name: research-queue
