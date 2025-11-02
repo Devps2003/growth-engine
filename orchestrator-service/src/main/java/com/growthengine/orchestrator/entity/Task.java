@@ -3,6 +3,7 @@ package com.growthengine.orchestrator.entity;
 import com.growthengine.common.enums.AgentType;
 import com.growthengine.common.enums.TaskStatus;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnTransformer;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,6 +22,7 @@ public class Task {
     private AgentType agentType;
     
     @Column(columnDefinition = "jsonb")
+    @ColumnTransformer(read = "payload::text", write = "?::jsonb")
     private String payload;  // JSON string
     
     @Enumerated(EnumType.STRING)
@@ -28,6 +30,7 @@ public class Task {
     private TaskStatus status;
     
     @Column(columnDefinition = "jsonb")
+    @ColumnTransformer(read = "result::text", write = "?::jsonb")
     private String result;  // JSON string (task result)
     
     @Column(name = "created_at", nullable = false, updatable = false)
