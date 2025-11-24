@@ -18,6 +18,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,9 +50,13 @@ public class OrchestratorService {
         );
 
         ContentRequest savedRequest = contentRequestRepository.save(request);
+        // Set initial status to PENDING
+        savedRequest.setStatus("PENDING");
+        savedRequest = contentRequestRepository.save(savedRequest);
         System.out.println("✅ Saved content request with ID: " + savedRequest.getId());
 
         // Step 2: Create a research task
+        // Step 3: Save task to database
         Map<String, Object> payload = new HashMap<>();
         payload.put("topic", savedRequest.getTopic());
         payload.put("tone", savedRequest.getTone());
@@ -95,6 +101,127 @@ public class OrchestratorService {
         return contentRequestRepository.findById(requestId).orElse(null);
     }
     
+    public Map<String, Object> getGeneratedContent(Long requestId) {
+        // Step 1: Find the WRITER task for this request
+        List<Task> writerTasks = taskRepository.findByRequestIdAndAgentType(
+            requestId, 
+            AgentType.WRITER
+        );
+        
+        // Step 2: Find a completed writer task
+        for (Task task : writerTasks) {
+            if (task.getStatus() == TaskStatus.COMPLETED && 
+                task.getResult() != null && 
+                !task.getResult().isEmpty()) {
+                
+                try {
+                    // Step 3: Deserialize the JSON result to Map
+                    Map<String, Object> content = objectMapper.readValue(
+                        task.getResult(),
+                        new TypeReference<Map<String, Object>>() {}
+                    );
+                    return content;
+                } catch (JsonProcessingException e) {
+                    System.err.println("❌ Error parsing content for request " + requestId + ": " + e.getMessage());
+                    return null;
+                }
+            }
+        }
+        
+        // No completed writer task found
+        return null;
+    }
+
+
+    /**
+     * Gets a request with all its associated tasks.
+     * This method fetches the request and all tasks, then converts them to a Map
+     * for easy JSON serialization in the API response.
+     * 
+     * @param requestId The request ID
+     * @return Map containing request details and list of tasks, or null if request not found
+     */
+    public Map<String, Object> getRequestWithTasks(Long requestId) {
+        ContentRequest request = contentRequestRepository.findById(requestId).orElse(null);
+        if(request==null){
+            return null;
+        }
+
+        List<Task> tasks = taskRepository.findByRequestId(requestId);
+
+        List<Map<String, Object>> taskList = new ArrayList<>();
+        for( Task task: tasks){
+            Map<String, Object> taskMap = new HashMap<>();
+            taskMap.put("id", task.getId());
+            taskMap.put("agent_type", task.getAgentType().toString());
+            taskMap.put("status", task.getStatus().toString());
+            taskMap.put("created_at", task.getCreatedAt());
+            taskMap.put("updated_at", task.getUpdatedAt());
+            taskList.add(taskMap);
+        }
+
+         Map<String, Object> response = new HashMap<>();
+        response.put("request_id", request.getId());
+        response.put("status", request.getStatus());
+        response.put("topic", request.getTopic());
+        response.put("tone", request.getTone());
+        response.put("language", request.getLanguage());
+        response.put("created_at", request.getCreatedAt());
+        response.put("tasks", taskList);
+        
+        return response;
+    }
+
+
+    /**
+     * Checks if all tasks for a request are completed.
+     * This will be used later to set request status to COMPLETED
+     * when all agents finish their work.
+     * 
+     * @param requestId The request ID
+     * @return true if all tasks are completed, false otherwise
+     */
+    public boolean areAllTasksCompleted(Long requestId) {
+        // Get all tasks for this request
+        List<Task> tasks = taskRepository.findByRequestId(requestId);
+        
+        if (tasks.isEmpty()) {
+            // No tasks yet, so not completed
+            return false;
+        }
+        
+        // Check if ALL tasks are completed
+        for (Task task : tasks) {
+            if (task.getStatus() != TaskStatus.COMPLETED) {
+                // Found at least one task that's not completed
+                return false;
+            }
+        }
+        
+        // All tasks are completed!
+        return true;
+    }
+
+    /**
+     * Updates request status to COMPLETED if all tasks are done.
+     * This should be called periodically by the scheduler.
+     * 
+     * @param requestId The request ID
+     */
+    @Transactional
+    public void updateRequestStatusIfCompleted(Long requestId) {
+        // Check if all tasks are completed
+        if (areAllTasksCompleted(requestId)) {
+            ContentRequest request = contentRequestRepository.findById(requestId).orElse(null);
+            
+            if (request != null && !"COMPLETED".equals(request.getStatus())) {
+                request.setStatus("COMPLETED");
+                contentRequestRepository.save(request);
+                System.out.println("✅ Updated request " + requestId + " status to COMPLETED");
+            }
+        }
+    }
+
     /**
      * Processes completed research tasks and triggers writer tasks.
      * This is called periodically by the scheduler to maintain the workflow.
@@ -175,9 +302,14 @@ public class OrchestratorService {
                     " after research completion");
                 
                 // Update request status
-                request.setStatus("IN_PROGRESS");
-                contentRequestRepository.save(request);
-                
+                // Update request status to IN_PROGRESS when workflow starts
+                // This happens when first task (RESEARCHER) completes and triggers next step
+                if (!"IN_PROGRESS".equals(request.getStatus()) && !"COMPLETED".equals(request.getStatus())) {
+                    request.setStatus("IN_PROGRESS");
+                    contentRequestRepository.save(request);
+                    System.out.println("📊 Updated request " + request.getId() + " status to IN_PROGRESS");
+                }
+                                
             } catch (Exception e) {
                 System.err.println("❌ Error processing research task " + researchTask.getId() + ": " + e.getMessage());
                 e.printStackTrace();
@@ -186,12 +318,26 @@ public class OrchestratorService {
     }
     
     /**
-     * Scheduled job that runs every 5 seconds to check for completed research tasks
-     * and trigger writer tasks.
+     * Scheduled job that runs every 5 seconds to:
+     * 1. Process completed research tasks and trigger writer tasks
+     * 2. Check if any requests are fully completed and update their status
      */
     @Scheduled(fixedDelay = 5000) // Run every 5 seconds
     public void scheduleTaskProcessing() {
+        // Step 1: Process research tasks (existing functionality)
         processCompletedResearchTasks();
+        
+        // Step 2: Check all requests and update status if all tasks completed
+        // Get all requests that are IN_PROGRESS
+        List<ContentRequest> inProgressRequests = contentRequestRepository.findAll()
+            .stream()
+            .filter(req -> "IN_PROGRESS".equals(req.getStatus()))
+            .toList();
+        
+        // For each IN_PROGRESS request, check if all tasks are done
+        for (ContentRequest request : inProgressRequests) {
+            updateRequestStatusIfCompleted(request.getId());
+        }
     }
     
 }
