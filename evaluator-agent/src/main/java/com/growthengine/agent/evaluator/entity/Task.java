@@ -21,7 +21,7 @@ public class Task {
     @Column(name = "agent_type", nullable = false)
     private AgentType agentType;
     
-    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "jsonb") 
     @ColumnTransformer(read = "payload::text", write = "?::jsonb")
     private String payload;  // JSON string
     

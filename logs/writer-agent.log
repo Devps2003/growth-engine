@@ -1,0 +1,89 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.growthengine:writer-agent >--------------------
+[INFO] Building Writer Agent 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ writer-agent >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ writer-agent ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ writer-agent ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ writer-agent ---
+[INFO] skip non existing resourceDirectory /Users/devps/Downloads/growth-engine/writer-agent/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ writer-agent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ writer-agent <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ writer-agent ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2025-11-27T01:01:30.943+05:30  INFO 11371 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Starting WriterAgentApplication using Java 21.0.8 with PID 11371 (/Users/devps/Downloads/growth-engine/writer-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/writer-agent)
+2025-11-27T01:01:30.944+05:30  INFO 11371 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-11-27T01:01:31.066+05:30  INFO 11371 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-27T01:01:31.081+05:30  INFO 11371 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 1 JPA repository interface.
+2025-11-27T01:01:31.174+05:30  INFO 11371 --- [writer-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-27T01:01:31.186+05:30  INFO 11371 --- [writer-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-27T01:01:31.195+05:30  INFO 11371 --- [writer-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-27T01:01:31.280+05:30  INFO 11371 --- [writer-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-27T01:01:31.288+05:30  INFO 11371 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-27T01:01:31.363+05:30  INFO 11371 --- [writer-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77524ca7
+2025-11-27T01:01:31.363+05:30  INFO 11371 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-27T01:01:31.389+05:30  INFO 11371 --- [writer-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-27T01:01:31.650+05:30  INFO 11371 --- [writer-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-27T01:01:31.651+05:30  INFO 11371 --- [writer-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T01:01:31.808+05:30  INFO 11371 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-11-27T01:01:31.821+05:30  INFO 11371 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#36857d32:0/SimpleConnection@1231f25c [delegate=amqp://admin@127.0.0.1:5672/, localPort=65185]
+2025-11-27T01:01:31.840+05:30  INFO 11371 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Started WriterAgentApplication in 1.01 seconds (process running for 1.099)
+📨 Writer received task: 8 for request: 5
+Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
+🔄 Updated task status to IN_PROGRESS
+✍️ Writing content for topic: Artificial Intelligence in Healthcare with tone: professional
+✍️ Content generated: An Introduction to Artificial Intelligence in Healthcare
+Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
+Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
+✅ Content saved to database for task ID: 8
+2025-11-27T01:03:07.483+05:30  INFO 11371 --- [writer-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-11-27T01:03:08.035+05:30  INFO 11371 --- [writer-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-11-27T01:03:08.040+05:30  INFO 11371 --- [writer-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-27T01:03:08.042+05:30  INFO 11371 --- [writer-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-27T01:03:08.043+05:30  INFO 11371 --- [writer-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:37 min
+[INFO] Finished at: 2025-11-27T01:03:08+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project writer-agent: Process terminated with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

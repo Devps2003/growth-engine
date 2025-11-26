@@ -222,6 +222,92 @@ public class OrchestratorService {
         }
     }
 
+        /**
+     * Processes completed writer tasks and triggers evaluator tasks.
+     * This is called periodically by the scheduler to maintain the workflow.
+     */
+    @Transactional
+    public void processCompletedWriterTasks() {
+        // Find all completed writer tasks that don't have an evaluator task yet
+        List<Task> completedWriterTasks = taskRepository.findByAgentTypeAndStatus(
+            AgentType.WRITER, 
+            TaskStatus.COMPLETED
+        );
+        
+        for (Task writerTask : completedWriterTasks) {
+            // Check if evaluator task already exists for this request
+            List<Task> existingEvaluatorTasks = taskRepository.findByRequestIdAndAgentType(
+                writerTask.getRequestId(), 
+                AgentType.EVALUATOR
+            );
+            
+            if (!existingEvaluatorTasks.isEmpty()) {
+                // Evaluator task already exists, skip
+                continue;
+            }
+            
+            try {
+                // Get the writer result (the generated content)
+                String writerResultJson = writerTask.getResult();
+                if (writerResultJson == null || writerResultJson.isEmpty()) {
+                    System.out.println("⚠️ Writer task " + writerTask.getId() + " has no result, skipping");
+                    continue;
+                }
+                
+                // Deserialize writer result (the content)
+                Map<String, Object> writerContent = objectMapper.readValue(
+                    writerResultJson, 
+                    new TypeReference<Map<String, Object>>() {}
+                );
+                
+                // Get the original request
+                ContentRequest request = contentRequestRepository.findById(writerTask.getRequestId())
+                    .orElse(null);
+                
+                if (request == null) {
+                    System.out.println("⚠️ Request " + writerTask.getRequestId() + " not found, skipping");
+                    continue;
+                }
+                
+                // Create evaluator task payload
+                // Pass the writer content so evaluator can evaluate it
+                Map<String, Object> evaluatorPayload = new HashMap<>();
+                evaluatorPayload.put("content", writerContent); // The content to evaluate
+                evaluatorPayload.put("topic", request.getTopic());
+                evaluatorPayload.put("tone", request.getTone());
+                
+                // Convert payload to JSON string
+                String payloadJson = objectMapper.writeValueAsString(evaluatorPayload);
+                
+                // Save evaluator task to database
+                Task evaluatorTask = new Task(
+                    writerTask.getRequestId(),
+                    AgentType.EVALUATOR,
+                    payloadJson
+                );
+                Task savedEvaluatorTask = taskRepository.save(evaluatorTask);
+                
+                // Create TaskDTO for RabbitMQ
+                TaskDTO evaluatorTaskDTO = new TaskDTO(
+                    writerTask.getRequestId(),
+                    AgentType.EVALUATOR,
+                    evaluatorPayload
+                );
+                evaluatorTaskDTO.setId(savedEvaluatorTask.getId());
+                
+                // Publish evaluator task to queue
+                rabbitTemplate.convertAndSend(RabbitMQConfig.EVALUATOR_QUEUE, evaluatorTaskDTO);
+                
+                System.out.println("📤 Triggered evaluator task for request " + writerTask.getRequestId() + 
+                    " after writer completion");
+                
+            } catch (Exception e) {
+                System.err.println("❌ Error processing writer task " + writerTask.getId() + ": " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
     /**
      * Processes completed research tasks and triggers writer tasks.
      * This is called periodically by the scheduler to maintain the workflow.
@@ -320,14 +406,18 @@ public class OrchestratorService {
     /**
      * Scheduled job that runs every 5 seconds to:
      * 1. Process completed research tasks and trigger writer tasks
-     * 2. Check if any requests are fully completed and update their status
+     * 2. Process completed writer tasks and trigger evaluator tasks
+     * 3. Check if any requests are fully completed and update their status
      */
     @Scheduled(fixedDelay = 5000) // Run every 5 seconds
     public void scheduleTaskProcessing() {
         // Step 1: Process research tasks (existing functionality)
         processCompletedResearchTasks();
         
-        // Step 2: Check all requests and update status if all tasks completed
+        // Step 2: Process writer tasks
+        processCompletedWriterTasks();
+        
+        // Step 3: Check all requests and update status if all tasks completed
         // Get all requests that are IN_PROGRESS
         List<ContentRequest> inProgressRequests = contentRequestRepository.findAll()
             .stream()

@@ -1,0 +1,6 @@
+com/growthengine/agent/evaluator/listener/TaskListener.class
+com/growthengine/agent/evaluator/config/RabbitMQConfig.class
+com/growthengine/agent/evaluator/entity/Task.class
+com/growthengine/agent/evaluator/service/EvaluationService.class
+com/growthengine/agent/evaluator/repository/TaskRepository.class
+com/growthengine/agent/evaluator/EvaluatorAgentApplication.class

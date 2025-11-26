@@ -15,17 +15,33 @@ echo "   - Stopping all agent services..."
 pkill -f "orchestrator-service" 2>/dev/null || true
 pkill -f "researcher-agent" 2>/dev/null || true
 pkill -f "writer-agent" 2>/dev/null || true
+pkill -f "evaluator-agent" 2>/dev/null || true
 
 # Wait a moment for processes to terminate
 sleep 2
 
+# Kill processes from PID files if they exist
+if [ -d "logs" ]; then
+    echo "   - Stopping services from PID files..."
+    for pid_file in logs/*.pid; do
+        if [ -f "$pid_file" ]; then
+            pid=$(cat "$pid_file")
+            if ps -p $pid > /dev/null 2>&1; then
+                kill -9 $pid 2>/dev/null || true
+                echo "     ✅ Stopped process $pid"
+            fi
+            rm -f "$pid_file"
+        fi
+    done
+fi
+
 # Verify no Java processes are running
-JAVA_PROCESSES=$(ps aux | grep -E "(orchestrator|researcher|writer)" | grep java | grep -v grep | wc -l | tr -d ' ')
+JAVA_PROCESSES=$(ps aux | grep -E "(orchestrator|researcher|writer|evaluator)" | grep java | grep -v grep | wc -l | tr -d ' ')
 if [ "$JAVA_PROCESSES" -eq 0 ]; then
     echo "     ✅ All Spring Boot services stopped"
 else
     echo "     ⚠️  Some processes may still be running"
-    ps aux | grep -E "(orchestrator|researcher|writer)" | grep java | grep -v grep
+    ps aux | grep -E "(orchestrator|researcher|writer|evaluator)" | grep java | grep -v grep
 fi
 
 echo ""

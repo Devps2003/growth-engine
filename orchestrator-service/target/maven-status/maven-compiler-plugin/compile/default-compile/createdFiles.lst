@@ -1,3 +1,4 @@
+com/growthengine/orchestrator/service/OrchestratorService$3.class
 com/growthengine/orchestrator/config/RabbitMQConfig.class
 com/growthengine/orchestrator/entity/Task.class
 com/growthengine/orchestrator/entity/ContentRequest.class

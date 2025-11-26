@@ -36,5 +36,6 @@
 		<module>orchestrator-service</module>
 		<module>researcher-agent</module>
 		<module>writer-agent</module>
+		<module>evaluator-agent</module>
 	</modules>
 </project>
