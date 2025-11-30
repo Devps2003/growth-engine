@@ -1,0 +1,6 @@
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/SeoAgentApplication.java
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/config/RabbitMQConfig.java
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/entity/Task.java
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/listener/TaskListener.java
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/repository/TaskRepository.java
+/Users/devps/Downloads/growth-engine/seo-agent/src/main/java/com/growthengine/agent/seo/service/SeoService.java

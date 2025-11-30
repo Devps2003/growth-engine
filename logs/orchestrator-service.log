@@ -35,24 +35,24 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-11-27T01:01:20.939+05:30  INFO 11300 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : Starting OrchestratorApplication using Java 21.0.8 with PID 11300 (/Users/devps/Downloads/growth-engine/orchestrator-service/target/classes started by devps in /Users/devps/Downloads/growth-engine/orchestrator-service)
-2025-11-27T01:01:20.940+05:30  INFO 11300 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : No active profile set, falling back to 1 default profile: "default"
-2025-11-27T01:01:21.113+05:30  INFO 11300 --- [orchestrator-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-27T01:01:21.130+05:30  INFO 11300 --- [orchestrator-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
-2025-11-27T01:01:21.294+05:30  INFO 11300 --- [orchestrator-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-11-27T01:01:21.300+05:30  INFO 11300 --- [orchestrator-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-27T01:01:21.300+05:30  INFO 11300 --- [orchestrator-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
-2025-11-27T01:01:21.319+05:30  INFO 11300 --- [orchestrator-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-27T01:01:21.319+05:30  INFO 11300 --- [orchestrator-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 366 ms
-2025-11-27T01:01:21.374+05:30  INFO 11300 --- [orchestrator-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-27T01:01:21.392+05:30  INFO 11300 --- [orchestrator-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
-2025-11-27T01:01:21.401+05:30  INFO 11300 --- [orchestrator-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-27T01:01:21.479+05:30  INFO 11300 --- [orchestrator-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-27T01:01:21.490+05:30  INFO 11300 --- [orchestrator-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-27T01:01:21.580+05:30  INFO 11300 --- [orchestrator-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ccdacf5
-2025-11-27T01:01:21.580+05:30  INFO 11300 --- [orchestrator-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-27T01:01:21.600+05:30  WARN 11300 --- [orchestrator-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-11-27T01:01:21.606+05:30  INFO 11300 --- [orchestrator-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-28T23:19:13.154+05:30  INFO 30135 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : Starting OrchestratorApplication using Java 21.0.8 with PID 30135 (/Users/devps/Downloads/growth-engine/orchestrator-service/target/classes started by devps in /Users/devps/Downloads/growth-engine/orchestrator-service)
+2025-11-28T23:19:13.154+05:30  INFO 30135 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-11-28T23:19:13.328+05:30  INFO 30135 --- [orchestrator-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-28T23:19:13.347+05:30  INFO 30135 --- [orchestrator-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2025-11-28T23:19:13.497+05:30  INFO 30135 --- [orchestrator-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-11-28T23:19:13.502+05:30  INFO 30135 --- [orchestrator-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-28T23:19:13.502+05:30  INFO 30135 --- [orchestrator-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-28T23:19:13.521+05:30  INFO 30135 --- [orchestrator-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-28T23:19:13.521+05:30  INFO 30135 --- [orchestrator-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 354 ms
+2025-11-28T23:19:13.569+05:30  INFO 30135 --- [orchestrator-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-28T23:19:13.586+05:30  INFO 30135 --- [orchestrator-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-28T23:19:13.594+05:30  INFO 30135 --- [orchestrator-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-28T23:19:13.666+05:30  INFO 30135 --- [orchestrator-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-28T23:19:13.677+05:30  INFO 30135 --- [orchestrator-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-28T23:19:13.760+05:30  INFO 30135 --- [orchestrator-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ccdacf5
+2025-11-28T23:19:13.760+05:30  INFO 30135 --- [orchestrator-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-28T23:19:13.779+05:30  WARN 30135 --- [orchestrator-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-28T23:19:13.785+05:30  INFO 30135 --- [orchestrator-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.10
@@ -60,11 +60,11 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-27T01:01:21.848+05:30  INFO 11300 --- [orchestrator-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-27T01:01:21.892+05:30  INFO 11300 --- [orchestrator-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T01:01:22.161+05:30  WARN 11300 --- [orchestrator-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-27T01:01:22.282+05:30  INFO 11300 --- [orchestrator-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-11-27T01:01:22.287+05:30  INFO 11300 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : Started OrchestratorApplication in 1.488 seconds (process running for 1.599)
+2025-11-28T23:19:14.026+05:30  INFO 30135 --- [orchestrator-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-28T23:19:14.073+05:30  INFO 30135 --- [orchestrator-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-28T23:19:14.335+05:30  WARN 30135 --- [orchestrator-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-28T23:19:14.443+05:30  INFO 30135 --- [orchestrator-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-11-28T23:19:14.447+05:30  INFO 30135 --- [orchestrator-service] [           main] c.g.o.OrchestratorApplication            : Started OrchestratorApplication in 1.434 seconds (process running for 1.537)
 Hibernate: 
     select
         t1_0.id,
@@ -80,6 +80,81 @@ Hibernate:
     where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -160,9 +235,9 @@ Hibernate:
         (agent_type, created_at, payload, request_id, result, status, updated_at) 
     values
         (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
-2025-11-27T01:01:22.399+05:30  INFO 11300 --- [orchestrator-service] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2025-11-27T01:01:22.415+05:30  INFO 11300 --- [orchestrator-service] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#13552290:0/SimpleConnection@75bcaf [delegate=amqp://admin@127.0.0.1:5672/, localPort=65161]
-📤 Triggered evaluator task for request 3 after writer completion
+2025-11-28T23:19:14.555+05:30  INFO 30135 --- [orchestrator-service] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-11-28T23:19:14.570+05:30  INFO 30135 --- [orchestrator-service] [   scheduling-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#13552290:0/SimpleConnection@198a7fb4 [delegate=amqp://admin@127.0.0.1:5672/, localPort=54843]
+📤 Triggered SEO task for request 3 after evaluator completion
 Hibernate: 
     select
         t1_0.id,
@@ -198,7 +273,43 @@ Hibernate:
         (agent_type, created_at, payload, request_id, result, status, updated_at) 
     values
         (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
-📤 Triggered evaluator task for request 4 after writer completion
+📤 Triggered SEO task for request 4 after evaluator completion
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0 
+    where
+        cr1_0.id=?
+Hibernate: 
+    insert 
+    into
+        tasks
+        (agent_type, created_at, payload, request_id, result, status, updated_at) 
+    values
+        (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
+📤 Triggered SEO task for request 5 after evaluator completion
 Hibernate: 
     select
         cr1_0.id,
@@ -268,6 +379,21 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
 Hibernate: 
@@ -285,47 +411,6 @@ Hibernate:
     where
         t1_0.request_id=? 
         and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
 Hibernate: 
     select
         t1_0.id,
@@ -386,92 +471,6 @@ Hibernate:
     where
         t1_0.request_id=? 
         and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
 Hibernate: 
     select
         t1_0.id,
@@ -571,8 +570,98 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -614,9 +703,582 @@ Hibernate:
         cr1_0.user_id 
     from
         content_requests cr1_0
-2025-11-27T01:01:42.984+05:30  INFO 11300 --- [orchestrator-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-27T01:01:42.985+05:30  INFO 11300 --- [orchestrator-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-27T01:01:42.986+05:30  INFO 11300 --- [orchestrator-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0
+2025-11-28T23:19:40.142+05:30  INFO 30135 --- [orchestrator-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-28T23:19:40.142+05:30  INFO 30135 --- [orchestrator-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-28T23:19:40.144+05:30  INFO 30135 --- [orchestrator-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 Hibernate: 
     select
         cr1_0.id,
@@ -688,8 +1350,98 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -789,6 +1541,21 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
 Hibernate: 
@@ -806,47 +1573,6 @@ Hibernate:
     where
         t1_0.request_id=? 
         and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
 Hibernate: 
     select
         t1_0.id,
@@ -892,6 +1618,21 @@ Hibernate:
     where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -953,7 +1694,7 @@ Hibernate:
         (created_at, language, status, tone, topic, user_id) 
     values
         (?, ?, ?, ?, ?, ?)
-✅ Saved content request with ID: 5
+✅ Saved content request with ID: 6
 Hibernate: 
     insert 
     into
@@ -961,8 +1702,8 @@ Hibernate:
         (agent_type, created_at, payload, request_id, result, status, updated_at) 
     values
         (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
-✅ Saved task with ID: 7 for request: 5
-📤 Published research task to queue for request ID: 5
+✅ Saved task with ID: 13 for request: 6
+📤 Published research task to queue for request ID: 6
 Hibernate: 
     select
         cr1_0.id,
@@ -1079,6 +1820,21 @@ Hibernate:
         and t1_0.agent_type=?
 Hibernate: 
     select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
         cr1_0.id,
         cr1_0.created_at,
         cr1_0.language,
@@ -1097,7 +1853,7 @@ Hibernate:
         (agent_type, created_at, payload, request_id, result, status, updated_at) 
     values
         (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
-📤 Triggered writer task for request 5 after research completion
+📤 Triggered writer task for request 6 after research completion
 Hibernate: 
     select
         cr1_0.id,
@@ -1122,7 +1878,7 @@ Hibernate:
         user_id=? 
     where
         id=?
-📊 Updated request 5 status to IN_PROGRESS
+📊 Updated request 6 status to IN_PROGRESS
 Hibernate: 
     select
         t1_0.id,
@@ -1138,6 +1894,81 @@ Hibernate:
     where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -1293,8 +2124,53 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -1345,7 +2221,52 @@ Hibernate:
         (agent_type, created_at, payload, request_id, result, status, updated_at) 
     values
         (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
-📤 Triggered evaluator task for request 5 after writer completion
+📤 Triggered evaluator task for request 6 after writer completion
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -1486,8 +2407,411 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0 
+    where
+        cr1_0.id=?
+Hibernate: 
+    insert 
+    into
+        tasks
+        (agent_type, created_at, payload, request_id, result, status, updated_at) 
+    values
+        (?, ?, ?::jsonb, ?, ?::jsonb, ?, ?)
+📤 Triggered SEO task for request 6 after evaluator completion
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=?
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.created_at,
+        cr1_0.language,
+        cr1_0.status,
+        cr1_0.tone,
+        cr1_0.topic,
+        cr1_0.user_id 
+    from
+        content_requests cr1_0 
+    where
+        cr1_0.id=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -1595,7 +2919,7 @@ Hibernate:
         user_id=? 
     where
         id=?
-✅ Updated request 5 status to COMPLETED
+✅ Updated request 6 status to COMPLETED
 Hibernate: 
     select
         cr1_0.id,
@@ -1696,8 +3020,113 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -1854,8 +3283,113 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.agent_type=? 
+        and t1_0.status=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
 Hibernate: 
     select
         t1_0.id,
@@ -2012,6 +3546,21 @@ Hibernate:
     from
         tasks t1_0 
     where
+        t1_0.request_id=? 
+        and t1_0.agent_type=?
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.agent_type,
+        t1_0.created_at,
+        t1_0.payload::text,
+        t1_0.request_id,
+        t1_0.result::text,
+        t1_0.status,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
         t1_0.agent_type=? 
         and t1_0.status=?
 Hibernate: 
@@ -2029,62 +3578,6 @@ Hibernate:
     where
         t1_0.request_id=? 
         and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
 Hibernate: 
     select
         t1_0.id,
@@ -2160,777 +3653,6 @@ Hibernate:
     where
         t1_0.request_id=? 
         and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        cr1_0.id,
-        cr1_0.created_at,
-        cr1_0.language,
-        cr1_0.status,
-        cr1_0.tone,
-        cr1_0.topic,
-        cr1_0.user_id 
-    from
-        content_requests cr1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.request_id=? 
-        and t1_0.agent_type=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.agent_type,
-        t1_0.created_at,
-        t1_0.payload::text,
-        t1_0.request_id,
-        t1_0.result::text,
-        t1_0.status,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.agent_type=? 
-        and t1_0.status=?
 Hibernate: 
     select
         t1_0.id,
@@ -2990,8 +3712,8 @@ Hibernate:
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  01:47 min
-[INFO] Finished at: 2025-11-27T01:03:07+05:30
+[INFO] Total time:  01:14 min
+[INFO] Finished at: 2025-11-28T23:20:27+05:30
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project orchestrator-service: Process terminated with exit code: 137 -> [Help 1]
 [ERROR] 

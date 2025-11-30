@@ -309,6 +309,127 @@ public class OrchestratorService {
     }
 
     /**
+     * Processes completed evaluator tasks and triggers SEO tasks.
+     * This is called periodically by the scheduler to maintain the workflow.
+     */
+    @Transactional
+    public void processCompletedEvaluatorTasks() {
+        // Find all completed evaluator tasks that don't have an SEO task yet
+        List<Task> completedEvaluatorTasks = taskRepository.findByAgentTypeAndStatus(
+            AgentType.EVALUATOR, 
+            TaskStatus.COMPLETED
+        );
+        
+        for (Task evaluatorTask : completedEvaluatorTasks) {
+            // Check if SEO task already exists for this request
+            List<Task> existingSeoTasks = taskRepository.findByRequestIdAndAgentType(
+                evaluatorTask.getRequestId(), 
+                AgentType.SEO
+            );
+            
+            if (!existingSeoTasks.isEmpty()) {
+                // SEO task already exists, skip
+                continue;
+            }
+            
+            try {
+                // Get the evaluator result (contains evaluation + content)
+                String evaluatorResultJson = evaluatorTask.getResult();
+                if (evaluatorResultJson == null || evaluatorResultJson.isEmpty()) {
+                    System.out.println("⚠️ Evaluator task " + evaluatorTask.getId() + " has no result, skipping");
+                    continue;
+                }
+                
+                // Deserialize evaluator result
+                Map<String, Object> evaluatorResult = objectMapper.readValue(
+                    evaluatorResultJson, 
+                    new TypeReference<Map<String, Object>>() {}
+                );
+                
+                // Get the original request
+                ContentRequest request = contentRequestRepository.findById(evaluatorTask.getRequestId())
+                    .orElse(null);
+                
+                if (request == null) {
+                    System.out.println("⚠️ Request " + evaluatorTask.getRequestId() + " not found, skipping");
+                    continue;
+                }
+                
+                // Extract content and evaluation from evaluator result
+                // The evaluator result contains: evaluatedContent, overallScore, feedback, etc.
+                Map<String, Object> content = null;
+                Map<String, Object> evaluationResult = new HashMap<>();
+                
+                // Check if evaluator result has evaluatedContent
+                if (evaluatorResult.containsKey("evaluatedContent")) {
+                    content = (Map<String, Object>) evaluatorResult.get("evaluatedContent");
+                } else {
+                    // Fallback: use evaluator result as content
+                    content = evaluatorResult;
+                }
+                
+                // Extract evaluation metrics
+                if (evaluatorResult.containsKey("overallScore")) {
+                    evaluationResult.put("overallScore", evaluatorResult.get("overallScore"));
+                }
+                if (evaluatorResult.containsKey("readabilityScore")) {
+                    evaluationResult.put("readabilityScore", evaluatorResult.get("readabilityScore"));
+                }
+                if (evaluatorResult.containsKey("grammarScore")) {
+                    evaluationResult.put("grammarScore", evaluatorResult.get("grammarScore"));
+                }
+                if (evaluatorResult.containsKey("structureScore")) {
+                    evaluationResult.put("structureScore", evaluatorResult.get("structureScore"));
+                }
+                if (evaluatorResult.containsKey("feedback")) {
+                    evaluationResult.put("feedback", evaluatorResult.get("feedback"));
+                }
+                if (evaluatorResult.containsKey("recommendations")) {
+                    evaluationResult.put("recommendations", evaluatorResult.get("recommendations"));
+                }
+                
+                // Create SEO task payload
+                // Pass both content and evaluation result to SEO agent
+                Map<String, Object> seoPayload = new HashMap<>();
+                seoPayload.put("content", content); // The original content from Writer
+                seoPayload.put("evaluationResult", evaluationResult); // The evaluation metrics
+                seoPayload.put("topic", request.getTopic());
+                seoPayload.put("tone", request.getTone());
+                seoPayload.put("language", request.getLanguage());
+                
+                // Convert payload to JSON string
+                String payloadJson = objectMapper.writeValueAsString(seoPayload);
+                
+                // Save SEO task to database
+                Task seoTask = new Task(
+                    evaluatorTask.getRequestId(),
+                    AgentType.SEO,
+                    payloadJson
+                );
+                Task savedSeoTask = taskRepository.save(seoTask);
+                
+                // Create TaskDTO for RabbitMQ
+                TaskDTO seoTaskDTO = new TaskDTO(
+                    evaluatorTask.getRequestId(),
+                    AgentType.SEO,
+                    seoPayload
+                );
+                seoTaskDTO.setId(savedSeoTask.getId());
+                
+                // Publish SEO task to queue
+                rabbitTemplate.convertAndSend(RabbitMQConfig.SEO_QUEUE, seoTaskDTO);
+                
+                System.out.println("📤 Triggered SEO task for request " + evaluatorTask.getRequestId() + 
+                    " after evaluator completion");
+                
+            } catch (Exception e) {
+                System.err.println("❌ Error processing evaluator task " + evaluatorTask.getId() + ": " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
      * Processes completed research tasks and triggers writer tasks.
      * This is called periodically by the scheduler to maintain the workflow.
      */
@@ -407,7 +528,8 @@ public class OrchestratorService {
      * Scheduled job that runs every 5 seconds to:
      * 1. Process completed research tasks and trigger writer tasks
      * 2. Process completed writer tasks and trigger evaluator tasks
-     * 3. Check if any requests are fully completed and update their status
+     * 3. Process completed evaluator tasks and trigger SEO tasks (NEW - Step 21)
+     * 4. Check if any requests are fully completed and update their status
      */
     @Scheduled(fixedDelay = 5000) // Run every 5 seconds
     public void scheduleTaskProcessing() {
@@ -417,7 +539,10 @@ public class OrchestratorService {
         // Step 2: Process writer tasks
         processCompletedWriterTasks();
         
-        // Step 3: Check all requests and update status if all tasks completed
+        // Step 3: Process evaluator tasks (NEW - Step 21)
+        processCompletedEvaluatorTasks();
+        
+        // Step 4: Check all requests and update status if all tasks completed
         // Get all requests that are IN_PROGRESS
         List<ContentRequest> inProgressRequests = contentRequestRepository.findAll()
             .stream()

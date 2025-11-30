@@ -1,11 +1,12 @@
 com/growthengine/orchestrator/service/OrchestratorService$3.class
+com/growthengine/orchestrator/repository/ContentRequestRepository.class
+com/growthengine/orchestrator/service/OrchestratorService$2.class
+com/growthengine/orchestrator/service/OrchestratorService$1.class
+com/growthengine/orchestrator/controller/RequestController.class
 com/growthengine/orchestrator/config/RabbitMQConfig.class
 com/growthengine/orchestrator/entity/Task.class
 com/growthengine/orchestrator/entity/ContentRequest.class
 com/growthengine/orchestrator/service/OrchestratorService.class
-com/growthengine/orchestrator/repository/ContentRequestRepository.class
-com/growthengine/orchestrator/service/OrchestratorService$2.class
-com/growthengine/orchestrator/service/OrchestratorService$1.class
 com/growthengine/orchestrator/repository/TaskRepository.class
 com/growthengine/orchestrator/OrchestratorApplication.class
-com/growthengine/orchestrator/controller/RequestController.class
+com/growthengine/orchestrator/service/OrchestratorService$4.class

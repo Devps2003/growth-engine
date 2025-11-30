@@ -37,6 +37,7 @@
 		<module>researcher-agent</module>
 		<module>writer-agent</module>
 		<module>evaluator-agent</module>
-		<module>seo-agent</module> 
+		<module>seo-agent</module>
+		<module>publisher-agent</module> 
 	</modules>
 </project>

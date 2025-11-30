@@ -38,18 +38,18 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-11-27T01:01:36.308+05:30  INFO 11412 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : Starting EvaluatorAgentApplication using Java 21.0.8 with PID 11412 (/Users/devps/Downloads/growth-engine/evaluator-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/evaluator-agent)
-2025-11-27T01:01:36.309+05:30  INFO 11412 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : No active profile set, falling back to 1 default profile: "default"
-2025-11-27T01:01:36.428+05:30  INFO 11412 --- [evaluator-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-27T01:01:36.442+05:30  INFO 11412 --- [evaluator-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
-2025-11-27T01:01:36.537+05:30  INFO 11412 --- [evaluator-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-27T01:01:36.548+05:30  INFO 11412 --- [evaluator-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
-2025-11-27T01:01:36.556+05:30  INFO 11412 --- [evaluator-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-27T01:01:36.642+05:30  INFO 11412 --- [evaluator-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-27T01:01:36.650+05:30  INFO 11412 --- [evaluator-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-27T01:01:36.719+05:30  INFO 11412 --- [evaluator-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ed18798
-2025-11-27T01:01:36.719+05:30  INFO 11412 --- [evaluator-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-27T01:01:36.745+05:30  INFO 11412 --- [evaluator-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-28T23:19:28.576+05:30  INFO 30246 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : Starting EvaluatorAgentApplication using Java 21.0.8 with PID 30246 (/Users/devps/Downloads/growth-engine/evaluator-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/evaluator-agent)
+2025-11-28T23:19:28.577+05:30  INFO 30246 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-11-28T23:19:28.699+05:30  INFO 30246 --- [evaluator-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-28T23:19:28.712+05:30  INFO 30246 --- [evaluator-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2025-11-28T23:19:28.803+05:30  INFO 30246 --- [evaluator-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-28T23:19:28.815+05:30  INFO 30246 --- [evaluator-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-28T23:19:28.823+05:30  INFO 30246 --- [evaluator-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-28T23:19:28.903+05:30  INFO 30246 --- [evaluator-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-28T23:19:28.910+05:30  INFO 30246 --- [evaluator-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-28T23:19:28.984+05:30  INFO 30246 --- [evaluator-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ed18798
+2025-11-28T23:19:28.985+05:30  INFO 30246 --- [evaluator-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-28T23:19:29.012+05:30  INFO 30246 --- [evaluator-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.10
@@ -57,48 +57,30 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-27T01:01:37.013+05:30  INFO 11412 --- [evaluator-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-27T01:01:37.014+05:30  INFO 11412 --- [evaluator-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T01:01:37.221+05:30  INFO 11412 --- [evaluator-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2025-11-27T01:01:37.240+05:30  INFO 11412 --- [evaluator-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#528a16fb:0/SimpleConnection@6e96f3cd [delegate=amqp://admin@127.0.0.1:5672/, localPort=65197]
-2025-11-27T01:01:37.261+05:30  INFO 11412 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : Started EvaluatorAgentApplication in 1.077 seconds (process running for 1.169)
-📥 Received evaluation task for request: 3
+2025-11-28T23:19:29.276+05:30  INFO 30246 --- [evaluator-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-28T23:19:29.277+05:30  INFO 30246 --- [evaluator-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-28T23:19:29.483+05:30  INFO 30246 --- [evaluator-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-11-28T23:19:29.505+05:30  INFO 30246 --- [evaluator-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#528a16fb:0/SimpleConnection@6e96f3cd [delegate=amqp://admin@127.0.0.1:5672/, localPort=54878]
+2025-11-28T23:19:29.524+05:30  INFO 30246 --- [evaluator-agent] [           main] c.g.a.e.EvaluatorAgentApplication        : Started EvaluatorAgentApplication in 1.065 seconds (process running for 1.156)
+📥 Received evaluation task for request: 6
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task 5 status to IN_PROGRESS
+🔄 Updated task 15 status to IN_PROGRESS
 📊 Evaluating content quality...
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Evaluation completed for task 5 (Score: 80)
-📥 Received evaluation task for request: 4
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task 6 status to IN_PROGRESS
-📊 Evaluating content quality...
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Evaluation completed for task 6 (Score: 80)
-📥 Received evaluation task for request: 5
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task 9 status to IN_PROGRESS
-📊 Evaluating content quality...
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Evaluation completed for task 9 (Score: 80)
-2025-11-27T01:03:07.497+05:30  INFO 11412 --- [evaluator-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2025-11-27T01:03:07.962+05:30  INFO 11412 --- [evaluator-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2025-11-27T01:03:07.969+05:30  INFO 11412 --- [evaluator-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T01:03:07.971+05:30  INFO 11412 --- [evaluator-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-27T01:03:07.972+05:30  INFO 11412 --- [evaluator-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+✅ Evaluation completed for task 15 (Score: 80)
+2025-11-28T23:20:27.304+05:30  INFO 30246 --- [evaluator-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-11-28T23:20:28.141+05:30  INFO 30246 --- [evaluator-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-11-28T23:20:28.144+05:30  INFO 30246 --- [evaluator-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-28T23:20:28.145+05:30  INFO 30246 --- [evaluator-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-28T23:20:28.146+05:30  INFO 30246 --- [evaluator-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  01:32 min
-[INFO] Finished at: 2025-11-27T01:03:07+05:30
+[INFO] Total time:  01:00 min
+[INFO] Finished at: 2025-11-28T23:20:28+05:30
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project evaluator-agent: Process terminated with exit code: 143 -> [Help 1]
 [ERROR] 

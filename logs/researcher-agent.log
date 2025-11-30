@@ -35,18 +35,18 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-11-27T01:01:25.915+05:30  INFO 11336 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : Starting ResearcherAgentApplication using Java 21.0.8 with PID 11336 (/Users/devps/Downloads/growth-engine/researcher-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/researcher-agent)
-2025-11-27T01:01:25.916+05:30  INFO 11336 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-11-27T01:01:26.037+05:30  INFO 11336 --- [researcher-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-27T01:01:26.050+05:30  INFO 11336 --- [researcher-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
-2025-11-27T01:01:26.142+05:30  INFO 11336 --- [researcher-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-27T01:01:26.159+05:30  INFO 11336 --- [researcher-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
-2025-11-27T01:01:26.168+05:30  INFO 11336 --- [researcher-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-27T01:01:26.257+05:30  INFO 11336 --- [researcher-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-27T01:01:26.266+05:30  INFO 11336 --- [researcher-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-27T01:01:26.339+05:30  INFO 11336 --- [researcher-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@691541bc
-2025-11-27T01:01:26.340+05:30  INFO 11336 --- [researcher-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-27T01:01:26.367+05:30  INFO 11336 --- [researcher-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-28T23:19:18.029+05:30  INFO 30170 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : Starting ResearcherAgentApplication using Java 21.0.8 with PID 30170 (/Users/devps/Downloads/growth-engine/researcher-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/researcher-agent)
+2025-11-28T23:19:18.030+05:30  INFO 30170 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-11-28T23:19:18.149+05:30  INFO 30170 --- [researcher-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-28T23:19:18.162+05:30  INFO 30170 --- [researcher-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2025-11-28T23:19:18.253+05:30  INFO 30170 --- [researcher-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-28T23:19:18.265+05:30  INFO 30170 --- [researcher-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-28T23:19:18.275+05:30  INFO 30170 --- [researcher-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-28T23:19:18.361+05:30  INFO 30170 --- [researcher-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-28T23:19:18.370+05:30  INFO 30170 --- [researcher-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-28T23:19:18.440+05:30  INFO 30170 --- [researcher-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@691541bc
+2025-11-28T23:19:18.441+05:30  INFO 30170 --- [researcher-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-28T23:19:18.466+05:30  INFO 30170 --- [researcher-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.10
@@ -54,12 +54,12 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-27T01:01:26.632+05:30  INFO 11336 --- [researcher-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-27T01:01:26.632+05:30  INFO 11336 --- [researcher-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T01:01:26.793+05:30  INFO 11336 --- [researcher-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2025-11-27T01:01:26.805+05:30  INFO 11336 --- [researcher-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#510a2c7:0/SimpleConnection@33214124 [delegate=amqp://admin@127.0.0.1:5672/, localPort=65174]
-2025-11-27T01:01:26.823+05:30  INFO 11336 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : Started ResearcherAgentApplication in 1.024 seconds (process running for 1.11)
-📨 Received task: 7 for request: 5
+2025-11-28T23:19:18.726+05:30  INFO 30170 --- [researcher-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-28T23:19:18.727+05:30  INFO 30170 --- [researcher-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-28T23:19:18.881+05:30  INFO 30170 --- [researcher-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-11-28T23:19:18.894+05:30  INFO 30170 --- [researcher-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#510a2c7:0/SimpleConnection@33214124 [delegate=amqp://admin@127.0.0.1:5672/, localPort=54853]
+2025-11-28T23:19:18.911+05:30  INFO 30170 --- [researcher-agent] [           main] c.g.a.r.ResearcherAgentApplication       : Started ResearcherAgentApplication in 0.998 seconds (process running for 1.091)
+📨 Received task: 13 for request: 6
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
@@ -68,18 +68,18 @@ Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?:
 🔍 Research completed for topic: Artificial Intelligence in Healthcare
 Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
 Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Research results saved to database for task ID: 7
+✅ Research results saved to database for task ID: 13
 📊 Result summary: This is mock research data for: Artificial Intelligence in Healthcare
-2025-11-27T01:03:07.472+05:30  INFO 11336 --- [researcher-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2025-11-27T01:03:07.759+05:30  INFO 11336 --- [researcher-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2025-11-27T01:03:07.767+05:30  INFO 11336 --- [researcher-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-27T01:03:07.769+05:30  INFO 11336 --- [researcher-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-27T01:03:07.771+05:30  INFO 11336 --- [researcher-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-28T23:20:27.283+05:30  INFO 30170 --- [researcher-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2025-11-28T23:20:27.618+05:30  INFO 30170 --- [researcher-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2025-11-28T23:20:27.628+05:30  INFO 30170 --- [researcher-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-28T23:20:27.630+05:30  INFO 30170 --- [researcher-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-28T23:20:27.632+05:30  INFO 30170 --- [researcher-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  01:42 min
-[INFO] Finished at: 2025-11-27T01:03:07+05:30
+[INFO] Total time:  01:10 min
+[INFO] Finished at: 2025-11-28T23:20:27+05:30
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.6:run (default-cli) on project researcher-agent: Process terminated with exit code: 143 -> [Help 1]
 [ERROR] 

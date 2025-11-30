@@ -15,6 +15,7 @@ public class RabbitMQConfig {
     public static final String RESEARCH_QUEUE = "research-queue";
     public static final String WRITER_QUEUE = "writer-queue";
     public static final String EVALUATOR_QUEUE = "evaluator-queue";
+    public static final String SEO_QUEUE = "seo-queue";
 
     @Bean
     public Queue researchQueue() {
@@ -29,6 +30,11 @@ public class RabbitMQConfig {
     @Bean
     public Queue evaluatorQueue() {
         return new Queue(EVALUATOR_QUEUE, true);
+    }
+
+    @Bean
+    public Queue seoQueue() {
+        return new Queue(SEO_QUEUE, true);
     }
 
     @Bean
