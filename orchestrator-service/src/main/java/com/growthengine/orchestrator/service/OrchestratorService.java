@@ -430,6 +430,93 @@ public class OrchestratorService {
     }
 
     /**
+     * Processes completed SEO tasks and triggers publisher tasks.
+     * This is called periodically by the scheduler to maintain the workflow.
+     */
+    @Transactional
+    public void processCompletedSeoTasks() {
+        // Find all completed SEO tasks that don't have a publisher task yet
+        List<Task> completedSeoTasks = taskRepository.findByAgentTypeAndStatus(
+            AgentType.SEO, 
+            TaskStatus.COMPLETED
+        );
+        
+        for (Task seoTask : completedSeoTasks) {
+            // Check if publisher task already exists for this request
+            List<Task> existingPublisherTasks = taskRepository.findByRequestIdAndAgentType(
+                seoTask.getRequestId(), 
+                AgentType.PUBLISHER
+            );
+            
+            if (!existingPublisherTasks.isEmpty()) {
+                // Publisher task already exists, skip
+                continue;
+            }
+            
+            try {
+                // Get the SEO result (contains SEO-optimized content)
+                String seoResultJson = seoTask.getResult();
+                if (seoResultJson == null || seoResultJson.isEmpty()) {
+                    System.out.println("⚠️ SEO task " + seoTask.getId() + " has no result, skipping");
+                    continue;
+                }
+                
+                // Deserialize SEO result
+                Map<String, Object> seoOptimizedContent = objectMapper.readValue(
+                    seoResultJson, 
+                    new TypeReference<Map<String, Object>>() {}
+                );
+                
+                // Get the original request
+                ContentRequest request = contentRequestRepository.findById(seoTask.getRequestId())
+                    .orElse(null);
+                
+                if (request == null) {
+                    System.out.println("⚠️ Request " + seoTask.getRequestId() + " not found, skipping");
+                    continue;
+                }
+                
+                // Create publisher task payload
+                Map<String, Object> publisherPayload = new HashMap<>();
+                publisherPayload.put("seoOptimizedContent", seoOptimizedContent); // The SEO-optimized content
+                publisherPayload.put("topic", request.getTopic());
+                publisherPayload.put("tone", request.getTone());
+                publisherPayload.put("language", request.getLanguage());
+                
+                // Convert payload to JSON string
+                String payloadJson = objectMapper.writeValueAsString(publisherPayload);
+                
+                // Save publisher task to database
+                Task publisherTask = new Task(
+                    seoTask.getRequestId(),
+                    AgentType.PUBLISHER,
+                    payloadJson
+                );
+                Task savedPublisherTask = taskRepository.save(publisherTask);
+                
+                // Create TaskDTO for RabbitMQ
+                TaskDTO publisherTaskDTO = new TaskDTO(
+                    seoTask.getRequestId(),
+                    AgentType.PUBLISHER,
+                    publisherPayload
+                );
+                publisherTaskDTO.setId(savedPublisherTask.getId());
+                
+                // Publish publisher task to queue
+                rabbitTemplate.convertAndSend(RabbitMQConfig.PUBLISHER_QUEUE, publisherTaskDTO);
+                
+                System.out.println("📤 Triggered publisher task for request " + seoTask.getRequestId() + 
+                    " after SEO completion");
+                
+            } catch (Exception e) {
+                System.err.println("❌ Error processing SEO task " + seoTask.getId() + ": " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    /**
      * Processes completed research tasks and triggers writer tasks.
      * This is called periodically by the scheduler to maintain the workflow.
      */
@@ -531,25 +618,26 @@ public class OrchestratorService {
      * 3. Process completed evaluator tasks and trigger SEO tasks (NEW - Step 21)
      * 4. Check if any requests are fully completed and update their status
      */
-    @Scheduled(fixedDelay = 5000) // Run every 5 seconds
+    @Scheduled(fixedDelay = 5000)
     public void scheduleTaskProcessing() {
-        // Step 1: Process research tasks (existing functionality)
+        // Step 1: Process research tasks
         processCompletedResearchTasks();
         
         // Step 2: Process writer tasks
         processCompletedWriterTasks();
         
-        // Step 3: Process evaluator tasks (NEW - Step 21)
+        // Step 3: Process evaluator tasks
         processCompletedEvaluatorTasks();
         
-        // Step 4: Check all requests and update status if all tasks completed
-        // Get all requests that are IN_PROGRESS
+        // Step 4: Process SEO tasks (NEW - Step 23)
+        processCompletedSeoTasks();
+        
+        // Step 5: Check all requests and update status if all tasks completed
         List<ContentRequest> inProgressRequests = contentRequestRepository.findAll()
             .stream()
             .filter(req -> "IN_PROGRESS".equals(req.getStatus()))
             .toList();
         
-        // For each IN_PROGRESS request, check if all tasks are done
         for (ContentRequest request : inProgressRequests) {
             updateRequestStatusIfCompleted(request.getId());
         }
