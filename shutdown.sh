@@ -17,6 +17,7 @@ pkill -f "researcher-agent" 2>/dev/null || true
 pkill -f "writer-agent" 2>/dev/null || true
 pkill -f "evaluator-agent" 2>/dev/null || true
 pkill -f "seo-agent" 2>/dev/null || true
+pkill -f "publisher-agent" 2>/dev/null || true
 
 # Wait a moment for processes to terminate
 sleep 2
@@ -37,12 +38,12 @@ if [ -d "logs" ]; then
 fi
 
 # Verify no Java processes are running
-JAVA_PROCESSES=$(ps aux | grep -E "(orchestrator|researcher|writer|evaluator|seo)" | grep java | grep -v grep | wc -l | tr -d ' ')
+JAVA_PROCESSES=$(ps aux | grep -E "(orchestrator|researcher|writer|evaluator|seo|publisher)" | grep java | grep -v grep | wc -l | tr -d ' ')
 if [ "$JAVA_PROCESSES" -eq 0 ]; then
     echo "     ✅ All Spring Boot services stopped"
 else
     echo "     ⚠️  Some processes may still be running"
-    ps aux | grep -E "(orchestrator|researcher|writer|evaluator|seo)" | grep java | grep -v grep
+    ps aux | grep -E "(orchestrator|researcher|writer|evaluator|seo|publisher)" | grep java | grep -v grep
 fi
 
 echo ""

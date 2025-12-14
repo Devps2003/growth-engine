@@ -3,4 +3,5 @@
 /Users/devps/Downloads/growth-engine/writer-agent/src/main/java/com/growthengine/agent/writer/entity/Task.java
 /Users/devps/Downloads/growth-engine/writer-agent/src/main/java/com/growthengine/agent/writer/listener/TaskListener.java
 /Users/devps/Downloads/growth-engine/writer-agent/src/main/java/com/growthengine/agent/writer/repository/TaskRepository.java
+/Users/devps/Downloads/growth-engine/writer-agent/src/main/java/com/growthengine/agent/writer/service/GroqClient.java
 /Users/devps/Downloads/growth-engine/writer-agent/src/main/java/com/growthengine/agent/writer/service/WriterService.java

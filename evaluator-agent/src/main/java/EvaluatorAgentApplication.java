@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EvaluatorAgentApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(EvaluatorAgentApplication.class, args);
+        SpringApplication app = new SpringApplication(EvaluatorAgentApplication.class);
+        app.setWebApplicationType(org.springframework.boot.WebApplicationType.NONE);
+        app.run(args);
     }
 }

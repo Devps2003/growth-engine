@@ -7,6 +7,7 @@ com/growthengine/orchestrator/config/RabbitMQConfig.class
 com/growthengine/orchestrator/entity/Task.class
 com/growthengine/orchestrator/entity/ContentRequest.class
 com/growthengine/orchestrator/service/OrchestratorService.class
+com/growthengine/orchestrator/service/OrchestratorService$5.class
 com/growthengine/orchestrator/repository/TaskRepository.class
 com/growthengine/orchestrator/OrchestratorApplication.class
 com/growthengine/orchestrator/service/OrchestratorService$4.class

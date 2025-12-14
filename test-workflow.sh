@@ -53,15 +53,15 @@ echo ""
 
 # Step 4: Wait and monitor workflow
 echo "4. Monitoring workflow progress..."
-echo "   (This will check status every 5 seconds for 90 seconds - 4 agents now!)"
+echo "   (This will check status every 5 seconds for 120 seconds - 5 agents now!)"
 echo ""
 
-for i in {1..18}; do
+for i in {1..24}; do
     echo -e "${BLUE}   Check #$i (after $((i*5)) seconds)...${NC}"
     
     # Show expected workflow
     if [ $i -eq 1 ]; then
-        echo "   Expected workflow: RESEARCHER → WRITER → EVALUATOR → SEO"
+        echo "   Expected workflow: RESEARCHER → WRITER → EVALUATOR → SEO → PUBLISHER"
     fi
     
     STATUS_RESPONSE=$(curl -s http://localhost:8081/api/v1/requests/$REQUEST_ID/status)

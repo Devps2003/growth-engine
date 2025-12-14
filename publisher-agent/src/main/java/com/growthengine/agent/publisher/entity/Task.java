@@ -1,4 +1,4 @@
-package com.growthengine.agent.publisher.repository;
+package com.growthengine.agent.publisher.entity;
 
 import com.growthengine.common.enums.AgentType;
 import com.growthengine.common.enums.TaskStatus;
@@ -21,7 +21,7 @@ public class Task {
     @Column(name = "agent_type", nullable = false)
     private AgentType agentType;
     
-    @Column(columnDefinition = "jsonb") 
+    @Column(columnDefinition = "jsonb")
     @ColumnTransformer(read = "payload::text", write = "?::jsonb")
     private String payload;  // JSON string
     
@@ -130,4 +130,3 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 }
-

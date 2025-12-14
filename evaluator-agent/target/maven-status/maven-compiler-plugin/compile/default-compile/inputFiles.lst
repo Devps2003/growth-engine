@@ -4,3 +4,5 @@
 /Users/devps/Downloads/growth-engine/evaluator-agent/src/main/java/com/growthengine/agent/evaluator/listener/TaskListener.java
 /Users/devps/Downloads/growth-engine/evaluator-agent/src/main/java/com/growthengine/agent/evaluator/repository/TaskRepository.java
 /Users/devps/Downloads/growth-engine/evaluator-agent/src/main/java/com/growthengine/agent/evaluator/service/EvaluationService.java
+/Users/devps/Downloads/growth-engine/evaluator-agent/src/main/java/com/growthengine/agent/evaluator/service/LanguageToolClient.java
+/Users/devps/Downloads/growth-engine/evaluator-agent/src/main/java/com/growthengine/agent/evaluator/service/ReadabilityCalculator.java

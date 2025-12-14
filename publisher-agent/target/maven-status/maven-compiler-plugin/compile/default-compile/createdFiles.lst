@@ -1,0 +1,6 @@
+com/growthengine/agent/publisher/PublisherAgentApplication.class
+com/growthengine/agent/publisher/entity/Task.class
+com/growthengine/agent/publisher/service/PublishingService.class
+com/growthengine/agent/publisher/config/RabbitMQConfig.class
+com/growthengine/agent/publisher/repository/TaskRepository.class
+com/growthengine/agent/publisher/listener/TaskListener.class

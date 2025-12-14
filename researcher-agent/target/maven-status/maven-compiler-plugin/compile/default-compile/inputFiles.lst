@@ -3,4 +3,6 @@
 /Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/entity/Task.java
 /Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/listener/TaskListener.java
 /Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/repository/TaskRepository.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/service/DuckDuckGoClient.java
 /Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/service/ResearchService.java
+/Users/devps/Downloads/growth-engine/researcher-agent/src/main/java/com/growthengine/agent/researcher/service/WikipediaClient.java

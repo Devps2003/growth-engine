@@ -1,6 +1,6 @@
 package com.growthengine.agent.publisher.repository;
 
-import com.growthengine.agent.seo.entity.Task;
+import com.growthengine.agent.publisher.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

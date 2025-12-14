@@ -1,6 +1,8 @@
 spring:
   application:
     name: writer-agent
+  main:
+    web-application-type: none
   
   datasource:
     url: jdbc:postgresql://localhost:5432/growthengine
@@ -22,4 +24,12 @@ spring:
 writer:
   queue:
     name: writer-queue
+
+groq:
+  api:
+    key: 
+    base-url: https://api.groq.com/openai/v1
+    model: llama-3.3-70b-versatile  # Updated model name
+    max-tokens: 2000
+    temperature: 0.7
 

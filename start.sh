@@ -113,6 +113,10 @@ sleep 2
 
 # Start SEO agent
 start_service "seo-agent" "seo-agent"
+sleep 2
+
+# Start publisher agent
+start_service "publisher-agent" "publisher-agent"
 sleep 3
 
 echo ""
@@ -148,6 +152,7 @@ echo "  • Researcher Agent: Running"
 echo "  • Writer Agent: Running"
 echo "  • Evaluator Agent: Running"
 echo "  • SEO Agent: Running"
+echo "  • Publisher Agent: Running"
 echo "  • PostgreSQL: localhost:5432"
 echo "  • RabbitMQ Management: http://localhost:15672 (admin/admin123)"
 echo ""
@@ -157,6 +162,7 @@ echo "  • logs/researcher-agent.log"
 echo "  • logs/writer-agent.log"
 echo "  • logs/evaluator-agent.log"
 echo "  • logs/seo-agent.log"
+echo "  • logs/publisher-agent.log"
 echo ""
 echo "To stop all services, run: ./shutdown.sh"
 echo ""
