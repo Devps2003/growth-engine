@@ -102,20 +102,43 @@ public class OrchestratorService {
     }
     
     public Map<String, Object> getGeneratedContent(Long requestId) {
-        // Step 1: Find the WRITER task for this request
+        // Step 1: Try to find PUBLISHER task first (has published URL and final content)
+        List<Task> publisherTasks = taskRepository.findByRequestIdAndAgentType(
+            requestId, 
+            AgentType.PUBLISHER
+        );
+        
+        for (Task task : publisherTasks) {
+            if (task.getStatus() == TaskStatus.COMPLETED && 
+                task.getResult() != null && 
+                !task.getResult().isEmpty()) {
+                
+                try {
+                    // Deserialize publisher result (contains published URL, published content, etc.)
+                    Map<String, Object> publisherResult = objectMapper.readValue(
+                        task.getResult(),
+                        new TypeReference<Map<String, Object>>() {}
+                    );
+                    return publisherResult;
+                } catch (JsonProcessingException e) {
+                    System.err.println("❌ Error parsing publisher content for request " + requestId + ": " + e.getMessage());
+                }
+            }
+        }
+        
+        // Step 2: Fallback to WRITER task if no publisher task found
         List<Task> writerTasks = taskRepository.findByRequestIdAndAgentType(
             requestId, 
             AgentType.WRITER
         );
         
-        // Step 2: Find a completed writer task
         for (Task task : writerTasks) {
             if (task.getStatus() == TaskStatus.COMPLETED && 
                 task.getResult() != null && 
                 !task.getResult().isEmpty()) {
                 
                 try {
-                    // Step 3: Deserialize the JSON result to Map
+                    // Deserialize the JSON result to Map
                     Map<String, Object> content = objectMapper.readValue(
                         task.getResult(),
                         new TypeReference<Map<String, Object>>() {}
@@ -128,7 +151,7 @@ public class OrchestratorService {
             }
         }
         
-        // No completed writer task found
+        // No completed task found
         return null;
     }
 

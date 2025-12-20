@@ -35,18 +35,18 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-12-15T01:15:35.023+05:30  INFO 54029 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Starting WriterAgentApplication using Java 21.0.8 with PID 54029 (/Users/devps/Downloads/growth-engine/writer-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/writer-agent)
-2025-12-15T01:15:35.024+05:30  INFO 54029 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : No active profile set, falling back to 1 default profile: "default"
-2025-12-15T01:15:35.163+05:30  INFO 54029 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-15T01:15:35.210+05:30  INFO 54029 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
-2025-12-15T01:15:35.375+05:30  INFO 54029 --- [writer-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-15T01:15:35.388+05:30  INFO 54029 --- [writer-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
-2025-12-15T01:15:35.397+05:30  INFO 54029 --- [writer-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-15T01:15:35.479+05:30  INFO 54029 --- [writer-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-15T01:15:35.490+05:30  INFO 54029 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-15T01:15:35.618+05:30  INFO 54029 --- [writer-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74123110
-2025-12-15T01:15:35.618+05:30  INFO 54029 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-15T01:15:35.643+05:30  INFO 54029 --- [writer-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-12-21T01:47:39.705+05:30  INFO 38342 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Starting WriterAgentApplication using Java 21.0.8 with PID 38342 (/Users/devps/Downloads/growth-engine/writer-agent/target/classes started by devps in /Users/devps/Downloads/growth-engine/writer-agent)
+2025-12-21T01:47:39.706+05:30  INFO 38342 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-21T01:47:39.847+05:30  INFO 38342 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-21T01:47:39.889+05:30  INFO 38342 --- [writer-agent] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-12-21T01:47:39.996+05:30  INFO 38342 --- [writer-agent] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-21T01:47:40.009+05:30  INFO 38342 --- [writer-agent] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-12-21T01:47:40.018+05:30  INFO 38342 --- [writer-agent] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-21T01:47:40.100+05:30  INFO 38342 --- [writer-agent] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-21T01:47:40.111+05:30  INFO 38342 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-21T01:47:40.175+05:30  INFO 38342 --- [writer-agent] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74123110
+2025-12-21T01:47:40.176+05:30  INFO 38342 --- [writer-agent] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-21T01:47:40.199+05:30  INFO 38342 --- [writer-agent] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.10
@@ -54,79 +54,8 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-12-15T01:15:35.900+05:30  INFO 54029 --- [writer-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-15T01:15:35.901+05:30  INFO 54029 --- [writer-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-15T01:15:36.162+05:30  INFO 54029 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2025-12-15T01:15:36.176+05:30  INFO 54029 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7022fb5c:0/SimpleConnection@47d4468a [delegate=amqp://admin@127.0.0.1:5672/, localPort=57172]
-2025-12-15T01:15:36.206+05:30  INFO 54029 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Started WriterAgentApplication in 1.303 seconds (process running for 1.395)
-📨 Writer received task: 84 for request: 21
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task status to IN_PROGRESS
-✍️ Writing content for topic: Python Programming with tone: professional
-2025-12-15T01:16:12.100+05:30 ERROR 54029 --- [writer-agent] [ntContainer#0-1] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-❌ Error calling Groq API: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-❌ Error generating content: Failed to generate content: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-⚠️ Using fallback mock content
-✍️ Content generated: An Introduction to Python Programming
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Content saved to database for task ID: 84
-📨 Writer received task: 89 for request: 22
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task status to IN_PROGRESS
-✍️ Writing content for topic: Python Programming with tone: professional
-❌ Error calling Groq API: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-❌ Error generating content: Failed to generate content: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-⚠️ Using fallback mock content
-✍️ Content generated: An Introduction to Python Programming
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Content saved to database for task ID: 89
-📨 Writer received task: 94 for request: 23
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task status to IN_PROGRESS
-✍️ Writing content for topic: Python Programming with tone: professional
-❌ Error calling Groq API: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-❌ Error generating content: Failed to generate content: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-⚠️ Using fallback mock content
-✍️ Content generated: An Introduction to Python Programming
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Content saved to database for task ID: 94
-📨 Writer received task: 98 for request: 24
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task status to IN_PROGRESS
-✍️ Writing content for topic: Python Programming with tone: professional
-❌ Error calling Groq API: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-❌ Error generating content: Failed to generate content: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-⚠️ Using fallback mock content
-✍️ Content generated: An Introduction to Python Programming
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Content saved to database for task ID: 98
-📨 Writer received task: 104 for request: 25
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-🔄 Updated task status to IN_PROGRESS
-✍️ Writing content for topic: Python Programming with tone: professional
-❌ Error calling Groq API: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-❌ Error generating content: Failed to generate content: 401 Unauthorized from POST https://api.groq.com/openai/v1/chat/completions
-⚠️ Using fallback mock content
-✍️ Content generated: An Introduction to Python Programming
-Hibernate: select t1_0.id,t1_0.agent_type,t1_0.created_at,t1_0.payload::text,t1_0.request_id,t1_0.result::text,t1_0.status,t1_0.updated_at from tasks t1_0 where t1_0.id=?
-Hibernate: update tasks set agent_type=?,payload=?::jsonb,request_id=?,result=?::jsonb,status=?,updated_at=? where id=?
-✅ Content saved to database for task ID: 104
-2025-12-15T01:36:08.341+05:30  INFO 54029 --- [writer-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2025-12-15T01:36:09.265+05:30  INFO 54029 --- [writer-agent] [ntContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2025-12-15T01:36:11.349+05:30  INFO 54029 --- [writer-agent] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-15T01:36:11.352+05:30  INFO 54029 --- [writer-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-15T01:36:11.354+05:30  INFO 54029 --- [writer-agent] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-21T01:47:40.430+05:30  INFO 38342 --- [writer-agent] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-21T01:47:40.431+05:30  INFO 38342 --- [writer-agent] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-21T01:47:40.662+05:30  INFO 38342 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2025-12-21T01:47:40.680+05:30  INFO 38342 --- [writer-agent] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7022fb5c:0/SimpleConnection@47d4468a [delegate=amqp://admin@127.0.0.1:5672/, localPort=65408]
+2025-12-21T01:47:40.706+05:30  INFO 38342 --- [writer-agent] [           main] c.g.agent.writer.WriterAgentApplication  : Started WriterAgentApplication in 1.12 seconds (process running for 1.211)

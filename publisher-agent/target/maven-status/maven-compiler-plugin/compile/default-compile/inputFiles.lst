@@ -4,3 +4,4 @@
 /Users/devps/Downloads/growth-engine/publisher-agent/src/main/java/com/growthengine/agent/publisher/listener/TaskListener.java
 /Users/devps/Downloads/growth-engine/publisher-agent/src/main/java/com/growthengine/agent/publisher/repository/TaskRepository.java
 /Users/devps/Downloads/growth-engine/publisher-agent/src/main/java/com/growthengine/agent/publisher/service/PublishingService.java
+/Users/devps/Downloads/growth-engine/publisher-agent/src/main/java/com/growthengine/agent/publisher/service/WordPressClient.java

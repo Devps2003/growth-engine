@@ -22,3 +22,10 @@ spring:
 publisher:
   queue:
     name: publisher-queue
+
+wordpress:
+  api:
+    enabled: ${WORDPRESS_ENABLED:false}  # Set to true to enable WordPress publishing
+    url: ${WORDPRESS_URL:}  # e.g., https://yoursite.wordpress.com or https://yoursite.com
+    username: ${WORDPRESS_USERNAME:}  # WordPress username
+    password: ${WORDPRESS_PASSWORD:} 

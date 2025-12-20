@@ -3,6 +3,7 @@ com/growthengine/orchestrator/repository/ContentRequestRepository.class
 com/growthengine/orchestrator/service/OrchestratorService$2.class
 com/growthengine/orchestrator/service/OrchestratorService$1.class
 com/growthengine/orchestrator/controller/RequestController.class
+com/growthengine/orchestrator/service/OrchestratorService$6.class
 com/growthengine/orchestrator/config/RabbitMQConfig.class
 com/growthengine/orchestrator/entity/Task.class
 com/growthengine/orchestrator/entity/ContentRequest.class

@@ -27,7 +27,7 @@ writer:
 
 groq:
   api:
-    key: 
+    key: ${GROQ_API_KEY:}  # Use environment variable, fallback to empty if not set
     base-url: https://api.groq.com/openai/v1
     model: llama-3.3-70b-versatile  # Updated model name
     max-tokens: 2000

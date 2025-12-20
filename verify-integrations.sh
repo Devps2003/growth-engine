@@ -139,6 +139,36 @@ fi
 
 echo ""
 
+# Step 4c: Check WordPress Configuration (Optional)
+echo "4c. Checking WordPress Integration (Optional)..."
+echo ""
+
+if [ -f "publisher-agent/src/main/resources/application.yml" ]; then
+    WORDPRESS_ENABLED=$(grep -A 5 "wordpress:" publisher-agent/src/main/resources/application.yml 2>/dev/null | grep "enabled:" | awk '{print $2}' | tr -d '"' | tr -d "'")
+    WORDPRESS_URL=$(grep -A 5 "wordpress:" publisher-agent/src/main/resources/application.yml 2>/dev/null | grep "url:" | awk '{print $2}' | tr -d '"' | tr -d "'")
+    
+    if [ "$WORDPRESS_ENABLED" = "true" ] && [ -n "$WORDPRESS_URL" ] && [ "$WORDPRESS_URL" != "" ]; then
+        echo -e "${GREEN}   ✅ WordPress integration enabled${NC}"
+        echo -e "${BLUE}      URL: $WORDPRESS_URL${NC}"
+        
+        # Test WordPress REST API connectivity
+        WORDPRESS_TEST=$(curl -s -o /dev/null -w "%{http_code}" "$WORDPRESS_URL/wp-json/wp/v2/posts?per_page=1" 2>/dev/null || echo "000")
+        if [ "$WORDPRESS_TEST" = "200" ] || [ "$WORDPRESS_TEST" = "401" ]; then
+            echo -e "${GREEN}      ✅ WordPress REST API accessible (HTTP $WORDPRESS_TEST)${NC}"
+        else
+            echo -e "${YELLOW}      ⚠️  WordPress REST API not accessible (HTTP $WORDPRESS_TEST)${NC}"
+            echo -e "${BLUE}         This may be normal if authentication is required${NC}"
+        fi
+    else
+        echo -e "${YELLOW}   ⚠️  WordPress integration not configured (using mock publishing)${NC}"
+        echo -e "${BLUE}      This is OK for MVP - mock publishing will be used${NC}"
+    fi
+else
+    echo -e "${YELLOW}   ⚠️  WordPress configuration file not found${NC}"
+fi
+
+echo ""
+
 # Step 4b: Test LanguageTool API
 echo "4b. Testing LanguageTool API (Grammar Checking)..."
 echo ""
@@ -305,6 +335,20 @@ if [ -f "logs/publisher-agent.log" ]; then
         echo -e "${GREEN}      ✅ Publisher service active${NC}"
     else
         echo -e "${YELLOW}      ⚠️  No publisher activity in recent logs${NC}"
+    fi
+    
+    if grep -q "Publishing to WordPress" logs/publisher-agent.log 2>/dev/null; then
+        echo -e "${GREEN}      ✅ WordPress publishing detected${NC}"
+    elif grep -q "Using mock publishing" logs/publisher-agent.log 2>/dev/null; then
+        echo -e "${YELLOW}      ⚠️  Using mock publishing (WordPress not configured)${NC}"
+    fi
+    
+    if grep -q "Published to WordPress" logs/publisher-agent.log 2>/dev/null; then
+        echo -e "${GREEN}      ✅ Successful WordPress publishing detected${NC}"
+    fi
+    
+    if grep -q "Error publishing to WordPress" logs/publisher-agent.log 2>/dev/null; then
+        echo -e "${RED}      ❌ WordPress publishing errors detected${NC}"
     fi
 fi
 

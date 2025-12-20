@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PublisherAgentApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(PublisherAgentApplication.class, args);
+        SpringApplication app = new SpringApplication(PublisherAgentApplication.class);
+        app.setWebApplicationType(org.springframework.boot.WebApplicationType.NONE);
+        app.run(args);
     }
 }

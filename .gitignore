@@ -1,0 +1,13 @@
+MVP_DEMO.md
+MVP_INTEGRATION_PLAN.md
+VERIFICATION_GUIDE.md
+shutdown.sh
+test-workflow.sh
+verify-integrations.sh
+start.sh
+logs/
+logs/*
+logs/**/*
+logs/**/**/*
+logs/**/**/**/*
+logs/**/**/**/**/*

@@ -1,13 +1,21 @@
 package com.growthengine.agent.seo.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
 public class SeoService {
+
+    @Autowired
+    private KeywordAnalyzer keywordAnalyzer;
+
+    @Autowired
+    private ContentStructureAnalyzer contentStructureAnalyzer;
     
     /**
      * Optimizes content for SEO by adding meta tags, keywords, and optimizing structure.
+     * Uses real SEO algorithms for keyword analysis and content structure.
      * 
      * @param content The content to optimize (from Writer agent)
      * @param evaluationResult The evaluation result (from Evaluator agent) - optional
@@ -18,9 +26,6 @@ public class SeoService {
             Map<String, Object> content, 
             Map<String, Object> evaluationResult,
             String topic) {
-        
-        // TODO: Later, integrate with real SEO tools (Yoast, SEMrush APIs, etc.)
-        // For now, return mock SEO optimization
         
         System.out.println("🔍 Optimizing content for SEO: " + topic);
         
@@ -43,33 +48,50 @@ public class SeoService {
         String metaDescription = generateMetaDescription(body, topic);
         seoOptimized.put("metaDescription", metaDescription);
         
-        // 4. Extract and generate keywords
-        List<String> keywords = extractKeywords(topic, body);
+        // 4. Extract keywords using real TF-IDF algorithm
+        List<String> keywords = keywordAnalyzer.extractKeywords(body, topic, 10);
         seoOptimized.put("keywords", keywords);
         
-        // 5. Generate Open Graph tags (for social media sharing)
+        // 5. Add keyword analysis (density, distribution)
+        if (!keywords.isEmpty() && body != null && !body.isEmpty()) {
+            String primaryKeyword = keywords.get(0);
+            Map<String, Object> keywordAnalysis = keywordAnalyzer.analyzeKeywordDistribution(primaryKeyword, body);
+            seoOptimized.put("keywordAnalysis", keywordAnalysis);
+            System.out.println("   🔑 Primary keyword: " + primaryKeyword + 
+                " (Density: " + keywordAnalysis.get("density") + "%)");
+        }
+        
+        // 6. Generate Open Graph tags (for social media sharing)
         Map<String, String> openGraph = generateOpenGraphTags(seoTitle, metaDescription, topic);
         seoOptimized.put("openGraph", openGraph);
         
-        // 6. Generate structured data (JSON-LD for rich snippets)
+        // 7. Generate structured data (JSON-LD for rich snippets)
         Map<String, Object> structuredData = generateStructuredData(seoTitle, metaDescription, topic);
         seoOptimized.put("structuredData", structuredData);
         
-        // 7. SEO recommendations
+        // 8. Analyze content structure
+        Map<String, Object> structureAnalysis = contentStructureAnalyzer.analyzeStructure(body);
+        seoOptimized.put("structureAnalysis", structureAnalysis);
+        System.out.println("   📐 Structure Score: " + structureAnalysis.get("structureScore") + 
+            " (Paragraphs: " + structureAnalysis.get("paragraphCount") + 
+            ", Headings: " + structureAnalysis.get("headingCount") + ")");
+        
+        // 9. Generate SEO recommendations based on real analysis
         List<String> recommendations = generateSeoRecommendations(title, body, topic);
         seoOptimized.put("seoRecommendations", recommendations);
         
-        // 8. Calculate SEO score
-        int seoScore = calculateSeoScore(seoTitle, metaDescription, keywords, body);
+        // 10. Calculate advanced SEO score using multiple factors
+        int seoScore = calculateAdvancedSeoScore(seoTitle, metaDescription, keywords, body, evaluationResult);
         seoOptimized.put("seoScore", seoScore);
+        System.out.println("   ⭐ SEO Score: " + seoScore + "/100");
         
-        // 9. Keep original content and evaluation for reference
+        // 11. Keep original content and evaluation for reference
         seoOptimized.put("originalContent", content);
         if (evaluationResult != null) {
             seoOptimized.put("evaluationResult", evaluationResult);
         }
         
-        // 10. Add topic and other metadata
+        // 12. Add topic and other metadata
         seoOptimized.put("topic", topic);
         seoOptimized.put("tone", content.getOrDefault("tone", "professional"));
         seoOptimized.put("language", content.getOrDefault("language", "English"));
@@ -125,29 +147,6 @@ public class SeoService {
     }
     
     /**
-     * Extracts keywords from topic and content.
-     */
-    private List<String> extractKeywords(String topic, String body) {
-        List<String> keywords = new ArrayList<>();
-        
-        // Add topic as primary keyword
-        keywords.add(topic.toLowerCase());
-        
-        // Extract words from topic
-        String[] topicWords = topic.toLowerCase().split("\\s+");
-        keywords.addAll(Arrays.asList(topicWords));
-        
-        // Add common SEO keywords based on topic
-        keywords.add("guide");
-        keywords.add("tips");
-        keywords.add("best practices");
-        
-        // Remove duplicates and limit to 10 keywords
-        Set<String> uniqueKeywords = new LinkedHashSet<>(keywords);
-        return new ArrayList<>(uniqueKeywords).subList(0, Math.min(10, uniqueKeywords.size()));
-    }
-    
-    /**
      * Generates Open Graph tags for social media sharing.
      */
     private Map<String, String> generateOpenGraphTags(String title, String description, String topic) {
@@ -175,21 +174,40 @@ public class SeoService {
     }
     
     /**
-     * Generates SEO recommendations.
+     * Generates SEO recommendations based on real analysis.
      */
     private List<String> generateSeoRecommendations(String title, String body, String topic) {
         List<String> recommendations = new ArrayList<>();
         
+        // Title recommendations
         if (title == null || title.length() < 30) {
-            recommendations.add("Title is too short. Aim for 50-60 characters.");
+            recommendations.add("Title is too short. Aim for 50-60 characters for optimal SEO.");
+        } else if (title.length() > 60) {
+            recommendations.add("Title is too long. Keep it under 60 characters to avoid truncation in search results.");
         }
         
-        if (body == null || body.length() < 300) {
-            recommendations.add("Content is too short. Aim for at least 300 words for better SEO.");
-        }
-        
+        // Keyword recommendations
         if (body != null && !body.toLowerCase().contains(topic.toLowerCase())) {
-            recommendations.add("Ensure the topic keyword appears naturally in the content.");
+            recommendations.add("Ensure the primary topic keyword appears naturally in the content body.");
+        }
+        
+        // Keyword density recommendations
+        if (body != null && !body.isEmpty() && topic != null && !topic.isEmpty()) {
+            double density = keywordAnalyzer.calculateKeywordDensity(topic, body);
+            if (density < 0.5) {
+                recommendations.add("Keyword density is low (" + String.format("%.1f", density) + 
+                    "%). Consider using the topic keyword more naturally throughout the content.");
+            } else if (density > 2.5) {
+                recommendations.add("Keyword density is too high (" + String.format("%.1f", density) + 
+                    "%). Avoid keyword stuffing - use synonyms and related terms.");
+            }
+        }
+        
+        // Structure recommendations from analyzer
+        if (body != null && !body.isEmpty()) {
+            Map<String, Object> structureAnalysis = contentStructureAnalyzer.analyzeStructure(body);
+            List<String> structureRecs = (List<String>) structureAnalysis.get("recommendations");
+            recommendations.addAll(structureRecs);
         }
         
         if (recommendations.isEmpty()) {
@@ -200,37 +218,81 @@ public class SeoService {
     }
     
     /**
-     * Calculates SEO score (0-100).
+     * Calculates advanced SEO score using multiple factors and real algorithms.
+     * 
+     * @param title The optimized title
+     * @param metaDescription The meta description
+     * @param keywords List of extracted keywords
+     * @param body The content body
+     * @param evaluationResult Optional evaluation result from Evaluator agent
+     * @return SEO score (0-100)
      */
-    private int calculateSeoScore(String title, String metaDescription, List<String> keywords, String body) {
+    private int calculateAdvancedSeoScore(String title, String metaDescription, List<String> keywords, 
+                                        String body, Map<String, Object> evaluationResult) {
         int score = 0;
         
-        // Title score (30 points)
+        // Title score (20 points)
         if (title != null && title.length() >= 30 && title.length() <= 60) {
-            score += 30;
-        } else if (title != null && title.length() > 0) {
-            score += 15;
-        }
-        
-        // Meta description score (25 points)
-        if (metaDescription != null && metaDescription.length() >= 150 && metaDescription.length() <= 160) {
-            score += 25;
-        } else if (metaDescription != null && metaDescription.length() > 0) {
-            score += 12;
-        }
-        
-        // Keywords score (20 points)
-        if (keywords != null && keywords.size() >= 5) {
             score += 20;
-        } else if (keywords != null && keywords.size() > 0) {
+        } else if (title != null && title.length() > 0) {
             score += 10;
         }
         
-        // Content length score (25 points)
+        // Meta description score (20 points)
+        if (metaDescription != null && metaDescription.length() >= 150 && metaDescription.length() <= 160) {
+            score += 20;
+        } else if (metaDescription != null && metaDescription.length() > 0) {
+            score += 10;
+        }
+        
+        // Keywords score (15 points)
+        if (keywords != null && keywords.size() >= 5) {
+            score += 15;
+        } else if (keywords != null && keywords.size() > 0) {
+            score += 8;
+        }
+        
+        // Keyword density score (15 points)
+        if (!keywords.isEmpty() && body != null && !body.isEmpty()) {
+            String primaryKeyword = keywords.get(0);
+            double density = keywordAnalyzer.calculateKeywordDensity(primaryKeyword, body);
+            if (density >= 0.5 && density <= 2.5) {
+                score += 15; // Optimal density
+            } else if (density > 0 && density < 0.5) {
+                score += 7; // Present but too low
+            } else if (density > 2.5 && density <= 4.0) {
+                score += 5; // Too high but not extreme
+            }
+            // density > 4.0 gets 0 points (keyword stuffing)
+        }
+        
+        // Content length score (15 points)
         if (body != null && body.length() >= 300) {
-            score += 25;
-        } else if (body != null && body.length() > 0) {
-            score += 12;
+            score += 15;
+        } else if (body != null && body.length() >= 200) {
+            score += 10;
+        } else if (body != null && body.length() >= 100) {
+            score += 5;
+        }
+        
+        // Structure score (15 points) - from structure analyzer
+        if (body != null && !body.isEmpty()) {
+            Map<String, Object> structureAnalysis = contentStructureAnalyzer.analyzeStructure(body);
+            int structureScore = (Integer) structureAnalysis.get("structureScore");
+            score += (int) (structureScore * 0.15); // Convert to 15-point scale
+        }
+        
+        // Readability bonus (if evaluation result available)
+        if (evaluationResult != null && evaluationResult.containsKey("readabilityScore")) {
+            Object readabilityObj = evaluationResult.get("readabilityScore");
+            if (readabilityObj instanceof Number) {
+                int readabilityScore = ((Number) readabilityObj).intValue();
+                if (readabilityScore >= 60) {
+                    score += 5; // Bonus for good readability
+                } else if (readabilityScore >= 40) {
+                    score += 2; // Small bonus for moderate readability
+                }
+            }
         }
         
         return Math.min(100, score);

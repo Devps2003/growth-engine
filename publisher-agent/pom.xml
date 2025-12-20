@@ -42,6 +42,12 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         
+        <!-- Spring WebFlux for HTTP client (WordPress REST API) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        
         <!-- Spring Data JPA (Database) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
